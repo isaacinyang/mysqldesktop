@@ -1,0 +1,20 @@
+#region {Entity}
+public ActionResult {Entity}(int id)
+{
+    var model = ViewModeller.Get{Entity}(id);
+    return View("{Entity}View", model);
+}
+
+public ActionResult Edit{Entity}(int? id = -1)
+{
+    var model = ViewModeller.Get{Entity}(id ?? -1);
+    return View("{Entity}Edit", model);
+}
+
+[HttpPost]
+public ActionResult Post{Entity}({Entity}ViewModel model)
+{
+	model.Save();
+	return RedirectToAction("View{Entity}", new { id = model.{Entity}Id});
+}
+#endregion

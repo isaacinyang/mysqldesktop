@@ -1,0 +1,10 @@
+namespace view
+{
+    public class Html
+    {
+        public string IsChecked(int realValue, int itemValue)
+        {
+            return realValue == itemValue ? "checked" : "";
+        }
+    }
+}

@@ -1,0 +1,22 @@
+﻿// ReSharper disable CheckNamespace
+using System;
+using System.Net;
+using System.Web.Http;
+
+namespace vm.apiControllers
+{
+	public class VmApiController : ApiController
+	{
+		protected IHttpActionResult Send(Func<IHttpActionResult> fn)
+		{
+			try
+			{
+				return fn.Invoke();
+			}
+			catch (Exception exception)
+			{
+				return Content(HttpStatusCode.InternalServerError, exception.ToString());
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+﻿#region {Entity}
+public IHttpActionResult GetMany{Entity}()
+{
+	return Send(() => Ok());
+}
+
+public IHttpActionResult GetOne{Entity}(int? id = -1)
+{
+	return Send(() => Ok(ViewModeller.Get{Entity}(id ?? -1)));
+}
+
+[System.Web.Http.HttpPost]
+public IHttpActionResult PostOne{Entity}({Entity}ViewModel vModel)
+{
+	return Send(() => Ok(Modeller.SaveOrUpdate{Entity}(vModel)));
+}
+#endregion

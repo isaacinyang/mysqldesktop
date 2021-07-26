@@ -1,0 +1,38 @@
+//ReSharper disable CheckNamespace
+using System;
+using System.Data;
+using System.Globalization;
+using ansyl.dao;
+
+namespace dto
+{
+    public interface IDataEntity
+    {
+        long GetPrimaryId();
+    }
+
+    public interface IViewEntity
+    {
+        long GetPrimaryId();
+    }
+
+    public sealed class DaoFactory
+    {
+        public static IDbConnection Connection() => Database.OpenNewConnection();
+    }
+
+    public sealed class UnitOfWork : BaseUnitOfWork
+    {
+        public UnitOfWork() : base(DaoFactory.Connection())
+        {
+        }
+    }
+
+    public sealed class OneTransaction : BaseTransaction<UnitOfWork>
+    {
+    }
+
+    public sealed class OneTask<TEntity> : BaseOneTask<UnitOfWork, TEntity> where TEntity : DataObject
+    {
+    }
+}

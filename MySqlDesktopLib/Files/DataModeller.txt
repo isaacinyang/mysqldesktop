@@ -1,0 +1,22 @@
+﻿//ReSharper disable CheckNamespace
+using ansyl.dao;
+
+namespace dto
+{
+    public class DataModeller
+    {
+        public static T Get<T>(OneTransaction ot, int id) where T : DataObject
+        {
+            return ot.Get<T>(id);
+        }
+
+        //public static int SaveOrUpdate<T>(OneTransaction ot, int id, T t) where T : DataObject
+        //{
+        //    if (id <= 0)
+        //        return ot.Insert(t);
+
+        //    ot.Update(t);
+        //    return id;
+        //}
+    }
+}

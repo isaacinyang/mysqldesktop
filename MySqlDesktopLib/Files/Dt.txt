@@ -1,0 +1,46 @@
+﻿using System;
+using System.Globalization;
+
+namespace dto
+{
+    public class Dt
+    {
+        public static string GetDateText(DateTime? dmDate)
+        {
+            return dmDate?.ToString("yyyy-MM-dd");
+        }
+
+        public static string GetTimeText(DateTime? dmTime)
+        {
+            return dmTime?.ToString("yyyy-MM-dd HH:mm");
+        }
+
+        static DateTime? GetNullDateTime(string vmDate, string format)
+        {
+            if (DateTime.TryParseExact(vmDate, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out var tm))
+                return tm;
+            else
+                return null;
+        }
+
+        public static DateTime? GetNullDate(string vmDate)
+        {
+            return GetNullDateTime(vmDate, "yyyy-MM-dd");
+        }
+
+        public static DateTime? GetNullTime(string vmTime)
+        {
+            return GetNullDateTime(vmTime, "yyyy-MM-ddTHH:mm");
+        }
+
+        public static DateTime GetDate(string vmDate)
+        {
+            return GetNullDate(vmDate).Value;
+        }
+
+        public static DateTime GetDateTime(string vmTime)
+        {
+            return GetNullTime(vmTime).Value;
+        }
+    }
+}

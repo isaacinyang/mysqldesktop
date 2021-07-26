@@ -1,0 +1,29 @@
+<style>
+	.col-xs-9, .col-xs-3 {
+		padding: 5px;
+		/*border: solid 1px crimson;*/
+	}
+
+	input[type=text], input[type=email], textarea {
+		width: 500px
+	}
+
+	input[type=number], input[type=date], input[type=datetime-local] {
+		width: 180px;
+	}
+
+	dt, dd {
+		padding: 2px 0
+	}
+
+	textarea {
+		width: 850px !important;
+		height: 500px !important;
+	}
+
+	.iEdit {
+	}
+
+	.iView {
+	}
+</style>

@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MySqlDesktop</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="vm\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="1.3.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ansyl.core">
+      <HintPath>..\..\..\..\..\Visual Studio 2017\Projects\ansyl.core\ansyl.core\binaries\ansyl.core.dll</HintPath>
+    </Reference>
+    <Reference Include="ansyl.dao">
+      <HintPath>..\..\..\..\..\Visual Studio 2017\Projects\ansyl.core\ansyl_dao\binaries\ansyl.dao.dll</HintPath>
+    </Reference>
+    <Reference Include="ansyl.data">
+      <HintPath>..\..\..\..\..\Visual Studio 2017\Projects\ansyl.core\ansyl.data\binaries\ansyl.data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\ActionResults.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Css.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\DataModeller.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Dt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\Html.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\DaoFactory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\VmApiController.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\WebApiActions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
